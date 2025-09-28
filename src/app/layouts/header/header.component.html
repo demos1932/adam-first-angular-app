@@ -1,0 +1,37 @@
+<a >
+  <img class="header-logo" src="../../../assets/images/siki-logo.png" alt="">
+</a>
+
+@for (item of tmpMenuList; track $index) {
+  <ng-container>
+    @if (item.list && item.list.length > 0) {
+      <a nz-dropdown [nzDropdownMenu]="menu" class="menu-title">
+        {{ item.name }}
+        <nz-icon nzType="caret-down" nzTheme="outline" />
+      </a>
+
+      <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu nzSelectable>
+          @for (subItem of item.list; track $index) {
+          <li nz-menu-item>{{ subItem.name }}</li>
+          }
+        </ul>
+      </nz-dropdown-menu>
+    } @else {
+      <a class="menu-title">
+        {{ item.name }}
+      </a>
+    }
+  </ng-container>
+
+}
+
+<ng-container>
+  <nz-avatar nz-dropdown [nzDropdownMenu]="avatarMenu" class="header-avatar" nzIcon="user" nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></nz-avatar>
+  <nz-dropdown-menu #avatarMenu="nzDropdownMenu">
+    <ul nz-menu nzSelectable>
+      <li nz-menu-item (click)="changeTheme('dark')">Theme(Dark)</li>
+      <li nz-menu-item (click)="changeTheme('default')">Theme(Default)</li>
+    </ul>
+  </nz-dropdown-menu>
+</ng-container>

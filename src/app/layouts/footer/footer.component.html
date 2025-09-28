@@ -1,0 +1,11 @@
+<ng-container *ngTemplateOutlet="adamFooter; context: Footer"></ng-container>
+<ng-template #adamFooter let-team="team", let-framework="framework">
+  <p>
+    {{framework}} ©{{ date.getFullYear() }} Implement By {{team}}
+  </p>
+</ng-template>
+<ng-template #footerRef>
+  <p>
+    The version is: {{footerVersion}}
+  </p>
+</ng-template>
