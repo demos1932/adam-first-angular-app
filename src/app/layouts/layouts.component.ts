@@ -21,7 +21,6 @@ export class LayoutsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    sessionStorage.setItem("theme", "dark");
   }
 
 }
