@@ -5,7 +5,7 @@
 @for (item of tmpMenuList; track $index) {
   <ng-container>
     @if (item.list && item.list.length > 0) {
-      <a nz-dropdown [nzDropdownMenu]="menu" class="menu-title">
+      <a nz-dropdown [nzDropdownMenu]="menu" class="menu-title" [routerLink]="item.path" [queryParams]="{name: 'tom', age: 30}">
         {{ item.name }}
         <nz-icon nzType="caret-down" nzTheme="outline" />
       </a>
@@ -13,12 +13,14 @@
       <nz-dropdown-menu #menu="nzDropdownMenu">
         <ul nz-menu nzSelectable>
           @for (subItem of item.list; track $index) {
-          <li nz-menu-item>{{ subItem.name }}</li>
+            <!-- <li nz-menu-item  [routerLink]="subItem.path">{{ subItem.name }}</li> -->
+            <li nz-menu-item  (click)="navigateTo(subItem.path)">{{ subItem.name }}</li>
           }
         </ul>
       </nz-dropdown-menu>
     } @else {
-      <a class="menu-title">
+      <!-- router link 方式路由以及路由传参1 -->
+      <a class="menu-title" [queryParams]="{name: 'jerry', age: 20}" routerLink="{{ item.path }}" routerLinkActive="router-link-active">
         {{ item.name }}
       </a>
     }

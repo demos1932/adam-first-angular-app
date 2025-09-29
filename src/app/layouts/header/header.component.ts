@@ -4,6 +4,7 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { Menu } from '../menu';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { Route, Router, RouterModule } from '@angular/router';
 
 type Stu = {
   name: string;
@@ -11,47 +12,53 @@ type Stu = {
 };
 
 interface TmpMenu {
-  name: string,
-  list?: Array<TmpMenu>
+  name: string;
+  path: string;
+  list?: Array<TmpMenu>;
 }
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.less'],
-  imports: [NzAvatarModule, NzDropDownModule, NzIconModule],
+  imports: [NzAvatarModule, NzDropDownModule, NzIconModule, RouterModule],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
-  themeService: ThemeService = inject(ThemeService)
+  constructor(private router: Router) {
+
+  }
+  themeService: ThemeService = inject(ThemeService);
 
   ngOnInit() {}
 
   tmpMenuList: Array<TmpMenu> = [
     {
-      "name": "首页",
+      name: '首页',
+      path: '',
     },
     {
-      "name": "全部课程",
-      "list": [
+      name: '全部课程',
+      path: '/course',
+      list: [
         {
-          "name": "所有课程"
+          name: 'Java 课程',
+          path: '/course/java/1',
         },
         {
-          "name": "Java 课程"
+          name: 'PHP 课程',
+          path: '/php',
         },
         {
-          "name": "PHP 课程"
+          name: 'Go 课程',
+          path: '/go',
         },
-        {
-          "name": "Go 课程"
-        }
-      ]
+      ],
     },
     {
-      "name": "其他",
-      "list": []
-    }
+      name: '其他',
+      path: '/other',
+      list: [],
+    },
   ];
 
   menuList: Menu[] = [
@@ -83,7 +90,14 @@ export class HeaderComponent implements OnInit {
   changeTheme(theme: string): void {
     // this.themeService.toggleTheme();
 
-    localStorage.setItem("theme", theme);
+    localStorage.setItem('theme', theme);
     this.themeService.changeTheme();
+  }
+
+  navigateTo(path: string): void {
+    // 路由传参方式2
+    console.log('Navigating to:', path);
+    this.router.navigate([path], { queryParams: { name: 'adam', age: 99 } });
+    //this.router.navigateByUrl(path);
   }
 }
