@@ -1,1 +1,43 @@
-<p>home works!</p>
+<div>
+  <nz-carousel nzAutoPlay>
+    @for (item of imgList; track item; let i = $index) {
+    <div nz-carousel-content>
+      <img src="{{ item.src }}" alt="" />
+    </div>
+    }
+  </nz-carousel>
+</div>
+
+<div class="home-course">
+  <h2>网校课程</h2>
+  <h4>精选网校课程，满足你的学习兴趣。</h4>
+  <div nz-row [nzGutter]="16">
+    <!-- row 的 span 加起来等于 24 即可 -->
+    <div nz-col class="gutter-row" [nzSpan]="18">
+      @for (item of courseListButtons; track item; let i = $index) {
+        <button nz-button nzType="text" [class]="item===selectedCourseButton ? 'course-type-activate' : 'course-type'" (click)="selectCourse(item)">{{ item }}</button>
+      }
+    </div>
+    <div nz-col class="gutter-row" [nzSpan]="6">
+      <nz-segmented [nzOptions]="courseOptions" (nzValueChange)="handleCourseOptionChange($event)"></nz-segmented>
+    </div>
+  </div>
+  <!-- 弹性布局，card 数量可以随着页面大小自动布局 -->
+  <div class="btn-wrapper" nz-flex [nzGap]="'middle'" [nzWrap]="'wrap'">
+    @for (item of courses; track $index) {
+      <nz-card nzHoverable style="width:200px" [nzCover]="coverTemplate"  [nzActions]="[actionSetting, actionEdit]">
+        <nz-card-meta [nzTitle]="item.title" [nzDescription]="item.description"></nz-card-meta>
+      </nz-card>
+      <ng-template #coverTemplate>
+        <img alt="example" src="{{ item.imageUrl }}" />
+      </ng-template>
+          <ng-template #actionSetting>
+      <nz-icon nzType="setting" />
+    </ng-template>
+    <ng-template #actionEdit>
+      <span>{{ item.price > 0 ? item.price : '免费' }}</span>
+    </ng-template>
+    }
+  </div>
+
+</div>

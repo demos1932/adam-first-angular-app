@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "title": "Java入门基础",
+    "description": "全面系统地学习Java编程，从基础语法到面向对象编程，掌握Java核心概念和实战技巧。",
+    "category": "java",
+    "imageUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    "price": 0
+  },
+  {
+    "id": 2,
+    "title": "Vue.js实战开发",
+    "description": "深入学习Vue.js框架，掌握组件化开发、状态管理和路由等核心技术，打造高性能的单页应用。",
+    "category": "vue",
+    "imageUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    "price": 99.99
+  },
+  {
+    "id": 3,
+    "title": "Python数据分析与可视化",
+    "description": "学习使用Python进行数据分析和可视化，掌握Pandas、Matplotlib等常用库，提升数据处理能力。",
+    "category": "python",
+    "imageUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    "price": 99.99
+  },
+  {
+    "id": 4,
+    "title": "Angular全栈开发指南",
+    "description": "从前端到后端，全面掌握Angular框架及其生态系统，构建现代化的全栈Web应用。",
+    "category": "angular",
+    "imageUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    "price": 99.99
+  },
+  {
+    "id": 5,
+    "title": "React进阶与实战",
+    "description": "深入理解React核心原理，掌握Hooks、Context等高级特性，提升组件开发和状态管理能力。",
+    "category": "react",
+    "imageUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    "price": 99.99
+  },
+  {
+    "id": 6,
+    "title": "JavaScript从入门到精通",
+    "description": "系统学习JavaScript语言基础、DOM操作、异步编程等核心知识，掌握前端开发必备技能。",
+    "category": "javascript",
+    "imageUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    "price": 99.99
+  },
+  {
+    "id": 7,
+    "title": "TypeScript实战开发",
+    "description": "学习TypeScript语言特性，掌握类型系统、接口和装饰器等高级用法，提高代码质量和可维护性。",
+    "category": "typescript",
+    "imageUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    "price": 99.99
+  },
+  {
+    "id": 8,
+    "title": "C#编程基础",
+    "description": "全面学习C#语言基础，掌握面向对象编程、LINQ和异步编程等核心概念，提升开发能力。",
+    "category": "c#",
+    "imageUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    "price": 99.99
+  },
+  {
+    "id": 9,
+    "title": "PHP Web开发实战",
+    "description": "学习PHP语言基础及其在Web开发中的应用，掌握常用框架和数据库操作，构建动态网站。",
+    "category": "php",
+    "imageUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    "price": 99.99
+  },
+  {
+    "id": 10,
+    "title": "Swift iOS应用开发",
+    "description": "学习Swift语言及iOS开发基础，掌握UIKit和SwiftUI等技术，打造高质量的移动应用。",
+    "category": "swift",
+    "imageUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    "price": 0
+  },
+  {
+    "id": 11,
+    "title": "Go语言入门与实战",
+    "description": "全面学习Go语言基础，掌握并发编程、网络编程等核心技术，提升后端开发能力。",
+    "category": "go",
+    "imageUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    "price": 99.99
+  },
+  {
+    "id": 12,
+    "title": "C++编程基础",
+    "description": "系统学习C++语言基础，掌握面向对象编程、STL和内存管理等核心概念，提升编程能力。",
+    "category": "c++",
+    "imageUrl": "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
+    "price": 0
+  }
+]
