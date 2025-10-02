@@ -1,11 +1,11 @@
-import { NgTemplateOutlet } from '@angular/common';
+import { CommonModule, NgTemplateOutlet } from '@angular/common';
 import { AfterViewInit, Component, OnDestroy, OnInit, signal, TemplateRef, ViewChild, ViewContainerRef, ViewRef } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.less'],
-  imports: [NgTemplateOutlet],
+  imports: [NgTemplateOutlet, CommonModule],
 })
 export class FooterComponent implements OnInit,  AfterViewInit, OnDestroy {
 
@@ -17,6 +17,7 @@ export class FooterComponent implements OnInit,  AfterViewInit, OnDestroy {
   }
   // 定义 footerVersion，它会在模板中显示
   footerVersion = '1.0.0'; // 示例版本号，请根据你的实际需求修改
+  versionText = "The version is"
 
   // 使用 @ViewChild 通过模板变量名 'footerRef' 来获取 TemplateRef
   // 明确指定 read 为 TemplateRef 可以确保获取到正确的类型（虽然不是必须，但有助于类型安全）

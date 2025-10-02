@@ -1,9 +1,9 @@
-import { Component, signal } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, signal, viewChildren } from '@angular/core';
 import { NzCarouselModule } from 'ng-zorro-antd/carousel';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSegmentedModule } from 'ng-zorro-antd/segmented';
 import { NzGridModule } from 'ng-zorro-antd/grid';
-import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzCardComponent, NzCardModule } from 'ng-zorro-antd/card';
 import { CourseCategory, Course } from '../model/course';
 import { NzFlexModule } from 'ng-zorro-antd/flex';
 import courseArray from '../mock/courses.json';
@@ -14,7 +14,17 @@ import courseArray from '../mock/courses.json';
   templateUrl: './home.html',
   styleUrl: './home.less'
 })
-export class Home {
+export class Home implements AfterViewInit{
+
+  cardList = viewChildren(NzCardComponent, { read: ElementRef });
+
+  ngAfterViewInit(): void {
+    console.log("调用子组件的方法2：", this.cardList());
+    this.cardList().forEach((card) => {
+      console.log("card: ", card);
+      console.log("card nativeElement: ", card.nativeElement);
+    });
+  }
 
   imgList = [
     {
