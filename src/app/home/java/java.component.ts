@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-java',
   templateUrl: './java.component.html',
-  styleUrls: ['./java.component.css']
+  styleUrls: ['./java.component.less']
 })
 export class JavaComponent implements OnInit {
 
